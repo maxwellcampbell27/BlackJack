@@ -19,21 +19,39 @@ public Boolean gameOn;
         deck = new Card[52];
 
         //todo: fill the deck arrauy with your favortie card
-
-        for(int i=0; i < deck.length; i++ ){
-            deck[i] = new Card(10, i, "Hearts");
-            deck[i].printInfo();
+        int cardIndex = 0;
+        for(int x = 0; x < 4; x++){
+        for(int i=0; i < 13; i++) {
+            deck[cardIndex] = new Card(10, i,x);
+            cardIndex++;
+           // deck[i].printInfo();
 
         }
 
+        }
+        shuffle();
+        printDeck();
+
+
 }
 
+public void shuffle(){
+for(int w = 0; w <deck.length; w++) {
+    int randy = (int)(Math.random()*52 );
+    //0-51
+    Card helper = deck[randy];
+    deck[randy] = deck[w];
+    deck[w] = helper;
+}
+}
 
+    public void printDeck(){
+    for(int i = 0; i< deck.length; i++){
+        deck[i].printInfo();
+}
+        System.out.println();
 
-
-
-
-
+    }
 
 
 
