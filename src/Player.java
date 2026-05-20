@@ -11,9 +11,9 @@ public class Player {
 
         Cardtotal = 0;
         isBust = false;
-        Card[]
         isHit = false;
         Name = "Name";
+        hand = new Card[1];
 
 
     }

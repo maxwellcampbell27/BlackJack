@@ -29,6 +29,24 @@ public Boolean gameOn;
         }
 
         }
+//dealer defined
+        d1 = new Dealer();
+
+        d1.hand[0] = deck[0];
+        d1.hand[1] = deck[1];
+        d1.calculateTotal();
+        d1.printInfo();
+
+//Player defined
+        p1 = new Player();
+
+        p1.hand[0] = deck[0];
+        p1.hand[1] = deck[1];
+        p1.calculateTotal();
+        p1.printInfo();
+
+
+
         shuffle();
         printDeck();
 
@@ -52,6 +70,7 @@ for(int w = 0; w <deck.length; w++) {
         System.out.println();
 
     }
+
 
 
 
