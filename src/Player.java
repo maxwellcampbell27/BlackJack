@@ -13,7 +13,7 @@ public class Player {
         isBust = false;
         isHit = false;
         Name = "Name";
-        hand = new Card[1];
+        hand = new Card[2];
 
 
     }

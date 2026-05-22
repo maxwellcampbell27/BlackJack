@@ -37,9 +37,9 @@ public class Dealer {
         for (int g = 0; g < hand.length; g++) {
             hand[g].printInfo();
         }
-        System.out.println("Cardtotal" + CardTotal);
+        System.out.println("Cardtotal: " + CardTotal);
         System.out.println("isBust: " + isBust);
-        System.out.println("isOver16" + isOver16);
+        System.out.println("isOver16: " + isOver16);
 
 
 
