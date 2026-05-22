@@ -46,7 +46,6 @@ public Boolean gameOn;
         p1.printInfo();
 
 
-
         shuffle();
         printDeck();
 
