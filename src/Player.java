@@ -27,8 +27,22 @@ public class Player {
             hand[s].printInfo();
         }
 
+    }
+    public void addCard(Card card){
+    card.printInfo();
+
+    Card[]store = hand;
+
+    hand = new Card[3];
+
+        hand[0] = store[0];
+        hand[1] = store[1];
+
+        hand[2] = card;
+
 
     }
+
         public void calculateTotal () {
             int addValue = 0;
             for (int d = 0; d < hand.length; d++) {

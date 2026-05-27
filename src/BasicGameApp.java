@@ -37,8 +37,8 @@ public Boolean gameOn;
 //dealer defined
         d1 = new Dealer();
 
-        d1.hand[0] = deck[0];
-        d1.hand[1] = deck[1];
+        d1.hand[0] = deck[2];
+        d1.hand[1] = deck[3];
         d1.calculateTotal();
         d1.printInfo();
 
@@ -59,8 +59,11 @@ public Boolean gameOn;
         String isHit = s.nextLine();
 
         //while loop: https://www.w3schools.com/java/java_while_loop.asp
-if(isHit.equals("hit")){
+if(isHit.equals("Hit")){
     System.out.println("you chose to hit");
+ p1.addCard(deck[4]);
+    p1.calculateTotal();
+    p1.printInfo();
 
 
 }
