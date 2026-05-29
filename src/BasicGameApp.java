@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class BasicGameApp {
 
+
 public Card[] deck;
 public Player p1;
 public Dealer d1;
 public Boolean gameOn;
+public int deckIndex = 4;
 
 
 
@@ -58,14 +60,26 @@ public Boolean gameOn;
         System.out.println("do you want to hit?");
         String isHit = s.nextLine();
 
+        while(p1.Cardtotal <= 21){
+
+
+
+
         //while loop: https://www.w3schools.com/java/java_while_loop.asp
-if(isHit.equals("Hit")){
+if(isHit.equals("Hit")) {
     System.out.println("you chose to hit");
- p1.addCard(deck[4]);
+    p1.addCard(deck[deckIndex]);
+    deckIndex ++;
     p1.calculateTotal();
     p1.printInfo();
 
 
+}
+
+//keeps track of how many cards are being dealed
+if(p1.Cardtotal>21){
+            System.out.println("do you want to hit?");
+            isHit = s.nextLine();
 }
 
 

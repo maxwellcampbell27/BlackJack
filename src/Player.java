@@ -5,6 +5,7 @@ public class Player {
     public Card[] hand;
     public boolean isHit;
     public String Name;
+    public int cardIndex = 2;
 
     //Constructor
     public Player() {
@@ -17,6 +18,7 @@ public class Player {
 
 
     }
+    //Keeps track of how many cards are in hand
 
     public void printInfo() {
         System.out.println("Cardtotal" + Cardtotal);
@@ -32,13 +34,13 @@ public class Player {
     card.printInfo();
 
     Card[]store = hand;
+    cardIndex++;
+    hand = new Card[cardIndex];
 
-    hand = new Card[3];
-
-        hand[0] = store[0];
-        hand[1] = store[1];
-
-        hand[2] = card;
+        for (int d = 0; d < store.length; d++){
+            hand[d] = store[d];
+}
+        hand[cardIndex-1] = card;
 
 
     }
