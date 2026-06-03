@@ -7,62 +7,46 @@ public class Player {
     public String Name;
     public int cardIndex = 2;
 
-    //Constructor
     public Player() {
-
         Cardtotal = 0;
         isBust = false;
         isHit = false;
         Name = "Name";
-        hand = new Card[2];
-
-
+        hand = new Card[11];
     }
-    //Keeps track of how many cards are in hand
+
+    public void addCard(Card card) {
+        hand[cardIndex] = card;
+        cardIndex++;
+    }
+
+    public void calculateTotal() {
+        int addValue = 0;
+        for (int d = 0; d < cardIndex; d++) {
+            addValue += hand[d].value;
+        }
+        if (addValue > 21) {
+            for (int d = 0; d < cardIndex; d++) {
+                if (hand[d].value == 11) {
+                    hand[d].value = 1;
+                    addValue -= 10;
+                    break;
+                }
+            }
+        }
+        Cardtotal = addValue;
+        if (Cardtotal > 21) {
+            isBust = true;
+        }
+    }
 
     public void printInfo() {
-        System.out.println("Cardtotal" + Cardtotal);
+        System.out.println("Card Total: " + Cardtotal);
         System.out.println("isBust: " + isBust);
         System.out.println("isHit: " + isHit);
         System.out.println("Name: " + Name);
-        for (int s = 0; s < hand.length; s++) {
+        for (int s = 0; s < cardIndex; s++) {
             hand[s].printInfo();
         }
-
     }
-    public void addCard(Card card){
-    card.printInfo();
-
-    Card[]store = hand;
-    cardIndex++;
-    hand = new Card[cardIndex];
-
-        for (int d = 0; d < store.length; d++){
-            hand[d] = store[d];
 }
-        hand[cardIndex-1] = card;
-
-
-    }
-
-        public void calculateTotal () {
-            int addValue = 0;
-            for (int d = 0; d < hand.length; d++) {
-                addValue = addValue + hand[d].value;
-            }
-
-            Cardtotal = addValue;
-        }
-
-//todo: Method called calulate total
-
-
-        //todo: Make constructor with no parameters that sets defaults for the instance variables
-
-        //todo: make a print that prints all the instance variables
-        //hint you will need a for loop for the hand
-
-
-
-}
-
